@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meow World 🐱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="top-bar">
+  <button onclick="toggleDark()">🌙 Dark Mode</button>
+  <button onclick="toggleMusic()">🎵 Music</button>
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="assets/bg-music.mp3" type="audio/mp3">
+</audio>
+
+<audio id="meowSound">
+  <source src="assets/meow.mp3" type="audio/mp3">
+</audio>
+
+<div class="container">
+  <div class="card">
+    <div class="cat-face">😺</div>
+    <h1>Meow Says…</h1>
+    <p id="quote">Meow! You’re my favorite human 🐾💖</p>
+    <button onclick="newQuote()">Meow Again 🐱</button>
+  </div>
+
+  <div class="gallery">
+    <img src="assets/cat1.jpg">
+    <img src="assets/cat2.jpg">
+    <img src="assets/cat3.jpg">
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
