@@ -2,39 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Meow World 🐱</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Meow For You 🐾</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-<div class="top-bar">
-  <button onclick="toggleDark()">🌙 Dark Mode</button>
-  <button onclick="toggleMusic()">🎵 Music</button>
-</div>
+  <div class="container">
+    <h1>🐱 Meow Says…</h1>
 
-<audio id="bgMusic" loop>
-  <source src="assets/bg-music.mp3" type="audio/mp3">
-</audio>
+    <img id="catImg" src="./assets/cat1.jpg" alt="Cute Cat">
 
-<audio id="meowSound">
-  <source src="assets/meow.mp3" type="audio/mp3">
-</audio>
+    <p id="quote">Click me… I have something purr-fect to say 💖</p>
 
-<div class="container">
-  <div class="card">
-    <div class="cat-face">😺</div>
-    <h1>Meow Says…</h1>
-    <p id="quote">Meow! You’re my favorite human 🐾💖</p>
-    <button onclick="newQuote()">Meow Again 🐱</button>
+    <button id="meowBtn">Meow 😽</button>
   </div>
 
-  <div class="gallery">
-    <img src="assets/cat1.jpg">
-    <img src="assets/cat2.jpg">
-    <img src="assets/cat3.jpg">
-  </div>
-</div>
-
-<script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
-  </html>
+</html>
