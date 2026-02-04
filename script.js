@@ -1,45 +1,47 @@
 const quotes = [
-  "Meow! I choose you forever 🐾💖",
-  "Purr… your code smells like love 😽",
-  "If bugs attack you, I’ll sit on the keyboard 😼",
-  "Nine lives, one favorite human 🐱✨"
+  "Meow~ you’re my favorite human 💕",
+  "Purr… I trust you 😼",
+  "I knead you because I love you 🤍",
+  "You smell like comfort 😽",
+  "If I sit near you, you are special 🐾"
 ];
 
-let musicPlaying = false;
+const images = [
+  "./assets/cat1.jpg",
+  "./assets/cat2.jpg",
+  "./assets/cat3.jpg"
+];
 
-function newQuote() {
-  const q = document.getElementById("quote");
-  const meow = document.getElementById("meowSound");
+let imgIndex = 0;
 
-  meow.currentTime = 0;
-  meow.play();
+const quoteEl = document.getElementById("quote");
+const catImg = document.getElementById("catImg");
+const btn = document.getElementById("meowBtn");
 
-  createHeart();
+const meowSound = new Audio("./assets/meow.mp3");
+const bgMusic = new Audio("./assets/bg-music.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
 
-  q.innerText = quotes[Math.floor(Math.random() * quotes.length)];
-}
+btn.addEventListener("click", () => {
+  meowSound.currentTime = 0;
+  meowSound.play();
 
-function toggleDark() {
-  document.body.classList.toggle("dark");
-}
+  bgMusic.play();
 
-function toggleMusic() {
-  const music = document.getElementById("bgMusic");
-  if (!musicPlaying) {
-    music.play();
-    musicPlaying = true;
-  } else {
-    music.pause();
-    musicPlaying = false;
-  }
-}
+  quoteEl.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+  imgIndex = (imgIndex + 1) % images.length;
+  catImg.src = images[imgIndex];
+
+  for (let i = 0; i < 5; i++) createHeart();
+});
 
 function createHeart() {
   const heart = document.createElement("div");
   heart.className = "heart";
-  heart.innerText = "💖";
-  heart.style.left = Math.random() * 100 + "vw";
-  document.body.appendChild(heart);
-
-  setTimeout(() => heart.remove(), 4000);
-             }
+  heart.textContent = "💖";
+  heart.style.left = Math.random() * 200 + "px";
+  heart.style.bottom = "60px";
+  document.querySelector(".container").appendChild(heart);
+  setTimeout(() => heart.remove(), 2000);
+}
